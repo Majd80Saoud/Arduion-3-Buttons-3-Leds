@@ -1,0 +1,42 @@
+// البنات الخاصة بالأزرار
+const int button1 = 7;
+const int button2 = 8;
+const int button3 = 9;
+
+// البنات الخاصة باللمبات
+const int led1 = 10;
+const int led2 = 11;
+const int led3 = 12;
+
+void setup() {
+  // تهيئة الأزرار كـ INPUT (بدون pullup داخلي)
+  pinMode(button1, INPUT);
+  pinMode(button2, INPUT);
+  pinMode(button3, INPUT);
+
+  // تهيئة اللمبات كمخرجات
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+}
+
+void loop() {
+  // الزر بيكون HIGH لما يتضغط، وLOW لما يكون سايب
+  if (digitalRead(button1) == HIGH) {
+    digitalWrite(led1, HIGH);  // شغّل اللمبة
+  } else {
+    digitalWrite(led1, LOW);   // طفي اللمبة
+  }
+
+  if (digitalRead(button2) == HIGH) {
+    digitalWrite(led2, HIGH);
+  } else {
+    digitalWrite(led2, LOW);
+  }
+
+  if (digitalRead(button3) == HIGH) {
+    digitalWrite(led3, HIGH);
+  } else {
+    digitalWrite(led3, LOW);
+  }
+}
